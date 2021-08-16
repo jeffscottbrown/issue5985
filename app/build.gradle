@@ -4,7 +4,7 @@ plugins {
 }
 
 version = "0.1"
-group = "issue5985"
+group = "app"
 
 repositories {
     mavenCentral()
@@ -15,7 +15,7 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental(true)
-        annotations("issue5985.*")
+        annotations("app.*")
     }
 }
 
@@ -31,7 +31,7 @@ dependencies {
 
 
 application {
-    mainClass.set("issue5985.MinimalApp")
+    mainClass.set("app.MinimalApp")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("11")

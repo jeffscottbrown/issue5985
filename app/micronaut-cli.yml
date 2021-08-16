@@ -1,5 +1,5 @@
 applicationType: default
-defaultPackage: issue5985
+defaultPackage: app
 testFramework: junit
 sourceLanguage: java
 buildTool: gradle

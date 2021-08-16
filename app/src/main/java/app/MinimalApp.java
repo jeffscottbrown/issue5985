@@ -1,4 +1,4 @@
-package issue5985;
+package app;
 
 import io.micronaut.context.BeanContext;
 import io.micronaut.context.annotation.Factory;
