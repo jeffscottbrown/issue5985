@@ -1,6 +1,7 @@
 plugins {
     id("com.github.johnrengelman.shadow") version "7.0.0"
     id("io.micronaut.application") version "2.0.3"
+    id 'org.javamodularity.moduleplugin' version '1.8.7'
 }
 
 version = "0.1"
@@ -20,19 +21,15 @@ micronaut {
 }
 
 dependencies {
-    annotationProcessor("io.micronaut:micronaut-http-validation")
-    implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut:micronaut-runtime")
-    implementation("javax.annotation:javax.annotation-api")
-    runtimeOnly("ch.qos.logback:logback-classic")
-    implementation("io.micronaut:micronaut-validation")
-
+    annotationProcessor "io.micronaut:micronaut-inject-java:${micronautVersion}"
+    implementation "io.micronaut:micronaut-inject:${micronautVersion}"
 }
-
 
 application {
+    mainModule = 'app'
     mainClass.set("app.MinimalApp")
 }
+
 java {
     sourceCompatibility = JavaVersion.toVersion("11")
     targetCompatibility = JavaVersion.toVersion("11")
