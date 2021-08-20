@@ -23,6 +23,8 @@ micronaut {
 dependencies {
     annotationProcessor "io.micronaut:micronaut-inject-java:${micronautVersion}"
     implementation "io.micronaut:micronaut-inject:${micronautVersion}"
+
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.2")
 }
 
 application {
@@ -33,6 +35,13 @@ application {
 java {
     sourceCompatibility = JavaVersion.toVersion("11")
     targetCompatibility = JavaVersion.toVersion("11")
+}
+
+test {
+    useJUnitPlatform()
+    moduleOptions {
+        runOnClasspath = true
+    }
 }
 
 
